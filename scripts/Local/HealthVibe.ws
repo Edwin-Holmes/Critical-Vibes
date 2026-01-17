@@ -49,8 +49,6 @@ class W3Effect_LowHealthVibe extends CBaseGameplayEffect {
         shortGap = 0.3f;
 
         if (thePlayer.IsCiri()) {
-            pulseTimer = -1.0f;
-            vibing = false; 
             return false;                                           // Ciri Vibe buggy and she has massive regen anyway.
         }
 
@@ -117,8 +115,6 @@ private var alreadyInWrap: bool; // Re-Entry flag for EET_LowHealth/EET_LowHealt
         }
 
         alreadyInWrap = false;
-        return EI_Deny; // block vanilla low-health fx.
     }
-
     return wrappedMethod(effectType, creat, srcName, signEffect);
 }
