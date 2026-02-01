@@ -16,7 +16,7 @@ class W3Effect_LowHealthVibe extends CBaseGameplayEffect {
 
     // 0 = Very Light; 1 = Light; 2 = Hard; 3 = Very Hard.
     private var alertVibeIntensity: int;    default alertVibeIntensity = 3;    // On threshold crossed.
-    private var healthVibeIntensity: int;   default healthVibeIntensity = 0;   // Heartbeat vibe.
+    private var healthVibeIntensity: int;   default healthVibeIntensity = 1;   // Heartbeat vibe.
 
     private function Vibrate(intensity: int, duration: float) {
         switch (intensity) {
@@ -89,7 +89,7 @@ class W3Effect_LowHealthVibe extends CBaseGameplayEffect {
             pulseTimer -= dt;                                       // Countdown to next pulse using delta time.
 
             if (doubleVibe && pulseTimer <= 0.0f) {                 // Second pulse.
-                Vibrate(healthVibeIntensity, healthVibeDuration);   
+                Vibrate(2, healthVibeDuration);   
                 pulseTimer = longGap;                               // reset for next full cycle.
                 doubleVibe = false;  
             }

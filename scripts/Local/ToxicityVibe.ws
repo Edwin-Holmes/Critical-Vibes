@@ -15,7 +15,7 @@ class W3Effect_ToxicityVibe extends CBaseGameplayEffect {
 
     // 0 = Very Light; 1 = Light; 2 = Hard; 3 = Very Hard.
     private var alertVibeIntensity: int;    default alertVibeIntensity = 3;    // On threshold crossed.
-    private var toxVibeIntensity: int;      default toxVibeIntensity = 0;      // Heartbeat vibe.
+    private var toxVibeIntensity: int;      default toxVibeIntensity = 1;      // Heartbeat vibe.
 
     private function Vibrate(intensity: int, duration: float) {
         switch (intensity) {
